@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/books.png' %}">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact_us.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Contact Us | BookMania</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="{% url 'index' %}"><span class="logo">BookMania : A site for book lovers</span></a>
+            <div class="links">
+                <a href="{% url 'sign_up' %}">Sign Up</a> | <a href="{% url 'login' %}">Login</a>
+            </div>
+        </header>
+        
+        <nav class="nav">
+            <ul>
+                <li><a href="{% url 'index' %}">Homepage</a></li>
+                <li><a href="{% url 'faq' %}">FAQ</a></li>
+                <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="app">
+            <div class="contact-card">
+                <h2 class="contact-title">Contact Us</h2>
+                <div class="contact-info">
+                    <p>Email: contact@bookmania.com</p>
+                    <p>Phone: 01xxxxxxxxx</p>
+                </div>
+            </div>
+            <div class="social-media-cards">
+                <div class="social-media-card">
+                    <i class="fab fa-facebook-f"></i>
+                    <p>Follow us on Facebook</p>
+                </div>
+                <div class="social-media-card">
+                    <i class="fab fa-twitter"></i>
+                    <p>Follow us on Twitter</p>
+                </div>
+                <div class="social-media-card">
+                    <i class="fab fa-instagram"></i>
+                    <p>Follow us on Instagram</p>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+           <span id="footer-text">BookMania</span> &copy; <br> 2024 - 
+        </footer>
+    </div>
+     <!-- Pass the URLs to JavaScript -->
+    <script>
+        const urls = {
+            login: "{% url 'login' %}",
+            signup: "{% url 'sign_up' %}",
+            index: "{% url 'index' %}",
+            faq: "{% url 'faq' %}",
+            contact_us: "{% url 'contact_us' %}",
+            user_panel: "{% url 'user_panel' %}",
+            admin_panel: "{% url 'admin_panel' %}",
+            user_available_books: "{% url 'user_available_books' %}",
+            get_available_books: "{% url 'get_available_books' %}",
+            book_search: "{% url 'book_search' %}",
+            search_books: "{% url 'search_books' %}",
+            borrowed_books: "{% url 'borrowed_books' %}",
+            user_info: "{% url 'user_info' %}",
+            logout_user: "{% url 'logout_user' %}",
+            borrow: "{% url 'borrow_book' 0 %}", // Placeholder for book borrowing URL
+            get_book_details: "{% url 'get_book_details' %}",
+            static_url: "{% static '' %}",  // Base static URL
+        };
+    </script>
+    <script src="{% static 'js/contact_us.js' %}" type="module"></script>
+</body>
+</html>

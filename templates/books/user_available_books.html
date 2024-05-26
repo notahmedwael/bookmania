@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/books.png' %}">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/user_available_books.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>User Available Books | BookMania</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="{% url 'index' %}"><span class="logo">BookMania : A site for book lovers</span></a>
+            <div class="links">
+                <a href="{% url 'sign_up' %}">Sign Up</a> | <a href="{% url 'login' %}">Login</a>
+            </div>
+        </header>
+        
+        <nav class="nav">
+            <ul>
+                <li><a href="{% url 'index' %}">Homepage</a></li>
+                <li><a href="{% url 'user_panel' %}">User Panel</a></li>
+                <li><a href="{% url 'faq' %}">FAQ</a></li>
+                <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+            </ul>
+        </nav>
+    <div class="app">
+            <!-- Filter options -->
+    <div class="filter-options">
+        <label for="filter"> <p>Filter by availability:</p></label>
+        <select id="filter" name="filter" class="select">
+        <option value="all">Show All Books</option>
+        <option value="available">Show Only Available Books</option>
+        <option value="borrowed">Show Borrowed Books</option>
+    </select>
+</div>
+
+        <!-- Book list container -->
+    <div id="bookList" class="book-list">
+        <!-- Dynamic book cards will be inserted here -->
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content" id="modalContent">
+            <span class="close">&times;</span>
+            <!-- Book details will be inserted here -->
+        </div>
+    </div>
+</div>
+        
+            
+    <footer class="footer">
+        <span id="footer-text">BookMania</span> &copy; 2024
+    </footer>
+    </div>
+    <!-- Pass the URLs to JavaScript -->
+    <script>
+        const urls = {
+            login: "{% url 'login' %}",
+            signup: "{% url 'sign_up' %}",
+            index: "{% url 'index' %}",
+            faq: "{% url 'faq' %}",
+            contact_us: "{% url 'contact_us' %}",
+            user_panel: "{% url 'user_panel' %}",
+            admin_panel: "{% url 'admin_panel' %}",
+            user_available_books: "{% url 'user_available_books' %}",
+            get_available_books: "{% url 'get_available_books' %}",
+            book_search: "{% url 'book_search' %}",
+            search_books: "{% url 'search_books' %}",
+            borrowed_books: "{% url 'borrowed_books' %}",
+            user_info: "{% url 'user_info' %}",
+            logout_user: "{% url 'logout_user' %}",
+            borrow: "{% url 'borrow_book' 0 %}", // Placeholder for book borrowing URL
+            get_book_details: "{% url 'get_book_details' %}",
+            static_url: "{% static '' %}",  // Base static URL
+        };
+    </script>
+    <script src="{% static 'js/user_available_books.js' %}" type="module"></script>
+</body>
+</html>
