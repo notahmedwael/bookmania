@@ -1,0 +1,83 @@
+.app{
+    grid-area: app;
+}
+/* Form */
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.form-group {
+    margin-bottom: 1.5em;
+    width: 70%;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+#admin {
+    text-align: center;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+button[type="submit"] {
+    width: 70%;
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #d94646;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 2em;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+#footer-text {
+    font-family: 'Dancing Script', cursive;
+}

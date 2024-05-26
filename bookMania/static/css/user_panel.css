@@ -1,0 +1,302 @@
+:root {
+    font-size: 16px;
+    --primary-color: #233142;
+    --secondary-color: #455d7a;
+    --accent-color: #f95959;
+    --background-color: #e3e3e3;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+}
+
+/* Page Container */
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        "app app app"
+        "footer footer footer";
+    grid-template-rows: auto auto 1fr auto;
+    height: 100vh;
+    gap: 0.2em;
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Links to login and sign up */
+.links {
+    font-size: 1.3em;
+}
+
+/* Logo */
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+/* Navigation */
+.nav {
+    grid-area: nav;
+    background-color: var(--secondary-color);
+    padding: 0.8em;
+}
+
+/* Navigation Links */
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+li {
+    padding: 0.5em;
+    font-size: 1.2em;
+}
+
+/* Navigation Links */
+.nav a {
+    color: #ffffff;
+}
+
+/* Links */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.app {
+    grid-area: app;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: #e3e3e3;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 1.2em;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 2em;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+#footer-text {
+    font-family: 'Dancing Script', cursive;
+}
+
+/* App */
+.app {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 1em;
+}
+
+.card-button {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#bookToBorrow {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+#confirmBorrow {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#confirmBorrow:hover {
+    background-color: #45a049;
+}
+
+/* Modal for Borrowed Books */
+#borrowedBooksModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+}
+
+#borrowedBooksModalContent {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+#borrowedBooksModalClose {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#borrowedBooksModalClose:hover,
+#borrowedBooksModalClose:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Book Card Styles */
+.book-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.book-details {
+    padding: 16px;
+}
+
+.book-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.book-author {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Button Styles */
+.card-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.card-button:hover {
+    background-color: #f95959;
+    transform: scale(1.1);
+}
+
+.greeting-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.greeting{
+    margin: 1.2em;
+}

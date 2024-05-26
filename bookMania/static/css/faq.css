@@ -1,0 +1,31 @@
+.app{
+    grid-area: app;
+    color: var(--primary-color);
+}
+
+/* FAQ Cards */
+.faq-card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1.5em;
+    margin: 1em;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.faq-card:hover {
+    transform: translateY(-5px);
+}
+
+/* FAQ Question */
+.faq-question {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+/* FAQ Answer */
+.faq-answer {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
